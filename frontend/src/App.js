@@ -1,20 +1,25 @@
 import React from 'react';
-import axios from 'axios';
+import SearchBar from './components/SearchBar';
+import TravelCard from './components/TravelCard';
+import MapPlaceholder from './components/MapPlaceholder';
 
 function App() {
-  const handleExample = async () => {
-    try {
-      const res = await axios.get('/api/maps');
-      alert(res.data.message);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const dummyTrips = [
+    { id: 1, title: 'Paris Adventure', description: 'Explore the city of lights' },
+    { id: 2, title: 'New York Getaway', description: 'Experience the big apple' },
+    { id: 3, title: 'Tokyo Discovery', description: 'Dive into Japanese culture' },
+  ];
 
   return (
-    <div>
+    <div style={{ textAlign: 'center', padding: '20px' }}>
       <h1>Smart Travel Hub</h1>
-      <button onClick={handleExample}>Test Google Maps API</button>
+      <SearchBar />
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
+        {dummyTrips.map((trip) => (
+          <TravelCard key={trip.id} title={trip.title} description={trip.description} />
+        ))}
+      </div>
+      <MapPlaceholder />
     </div>
   );
 }
