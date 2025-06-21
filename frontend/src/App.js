@@ -1,25 +1,35 @@
 import React from 'react';
-import SearchBar from './components/SearchBar';
-import TravelCard from './components/TravelCard';
-import MapPlaceholder from './components/MapPlaceholder';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import Attractions from './pages/Attractions';
+import LocalGuides from './pages/LocalGuides';
+import NearbyCities from './pages/NearbyCities';
+import FoodCulture from './pages/FoodCulture';
+import Tips from './pages/Tips';
+import Itinerary from './pages/Itinerary';
+import Essentials from './pages/Essentials';
+import Nightlife from './pages/Nightlife';
+import Monetization from './pages/Monetization';
 
 function App() {
-  const dummyTrips = [
-    { id: 1, title: 'Paris Adventure', description: 'Explore the city of lights' },
-    { id: 2, title: 'New York Getaway', description: 'Experience the big apple' },
-    { id: 3, title: 'Tokyo Discovery', description: 'Dive into Japanese culture' },
-  ];
-
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Smart Travel Hub</h1>
-      <SearchBar />
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
-        {dummyTrips.map((trip) => (
-          <TravelCard key={trip.id} title={trip.title} description={trip.description} />
-        ))}
+    <div>
+      <Navbar />
+      <div style={{ padding: '20px' }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/attractions" element={<Attractions />} />
+          <Route path="/guides" element={<LocalGuides />} />
+          <Route path="/nearby" element={<NearbyCities />} />
+          <Route path="/food" element={<FoodCulture />} />
+          <Route path="/tips" element={<Tips />} />
+          <Route path="/itinerary" element={<Itinerary />} />
+          <Route path="/essentials" element={<Essentials />} />
+          <Route path="/nightlife" element={<Nightlife />} />
+          <Route path="/monetization" element={<Monetization />} />
+        </Routes>
       </div>
-      <MapPlaceholder />
     </div>
   );
 }
