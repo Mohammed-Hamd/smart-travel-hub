@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
+// Simple test route to verify the maps endpoint is reachable
+router.get('/', (req, res) => {
+  res.json({ message: 'Maps API test endpoint' });
+});
+
 router.get('/geocode', async (req, res) => {
   try {
     const { address } = req.query;

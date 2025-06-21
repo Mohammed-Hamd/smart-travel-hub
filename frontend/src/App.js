@@ -4,8 +4,8 @@ import axios from 'axios';
 function App() {
   const handleExample = async () => {
     try {
-      const res = await axios.get('/api/maps/geocode', { params: { address: 'Seattle' } });
-      console.log(res.data);
+      const res = await axios.get('/api/maps');
+      alert(res.data.message);
     } catch (err) {
       console.error(err);
     }
