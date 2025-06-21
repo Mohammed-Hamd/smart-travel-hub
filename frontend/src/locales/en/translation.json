@@ -1,0 +1,16 @@
+{
+  "title": "Smart Travel Hub – Toronto",
+  "nav": {
+    "home": "Home",
+    "attractions": "Attractions",
+    "guides": "Local Guides",
+    "nearby": "Nearby Cities",
+    "food": "Food & Culture",
+    "tips": "Tips",
+    "itinerary": "Itinerary",
+    "essentials": "Essentials",
+    "nightlife": "Nightlife",
+    "monetization": "Monetization"
+  },
+  "welcome": "Welcome to the Toronto City Explorer for the 2026 World Cup!"
+}
