@@ -8,7 +8,8 @@ function FoodCulture() {
   ];
 
   return (
-    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <div className="container">
+    <table>
       <thead>
         <tr>
           <th>Cuisine</th>
@@ -26,6 +27,7 @@ function FoodCulture() {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 

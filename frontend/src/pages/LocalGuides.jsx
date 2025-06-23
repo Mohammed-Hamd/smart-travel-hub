@@ -8,7 +8,8 @@ function LocalGuides() {
   ];
 
   return (
-    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <div className="container">
+    <table>
       <thead>
         <tr>
           <th>Name</th>
@@ -25,11 +26,12 @@ function LocalGuides() {
             <td>{g.languages}</td>
             <td>{g.rate}</td>
             <td>{g.vehicle}</td>
-            <td><button>Book</button></td>
+            <td><button className="button">Book</button></td>
           </tr>
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 

@@ -8,15 +8,14 @@ function SearchBar() {
   };
 
   return (
-    <div style={{ margin: '20px 0' }}>
+    <div className="search-bar">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search destinations..."
-        style={{ padding: '8px', marginRight: '8px' }}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="button" onClick={handleSearch}>Search</button>
     </div>
   );
 }

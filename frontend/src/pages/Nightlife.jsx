@@ -8,11 +8,13 @@ function Nightlife() {
   ];
 
   return (
+    <div className="container">
     <ul>
       {events.map((e, idx) => (
         <li key={idx}>{e}</li>
       ))}
     </ul>
+    </div>
   );
 }
 

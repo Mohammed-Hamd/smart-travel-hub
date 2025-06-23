@@ -8,11 +8,13 @@ function Essentials() {
   ];
 
   return (
+    <div className="container">
     <ul>
       {items.map((item) => (
         <li key={item.id}>{item.need} - {item.location}</li>
       ))}
     </ul>
+    </div>
   );
 }
 
