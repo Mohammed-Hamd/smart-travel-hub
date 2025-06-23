@@ -6,7 +6,7 @@ import LanguageSelector from './LanguageSelector';
 function Navbar() {
   const { t } = useTranslation();
   return (
-    <nav style={{ display: 'flex', gap: '10px', padding: '10px', borderBottom: '1px solid #ccc' }}>
+    <nav className="navbar">
       <Link to="/">{t('nav.home')}</Link>
       <Link to="/attractions">{t('nav.attractions')}</Link>
       <Link to="/guides">{t('nav.guides')}</Link>

@@ -8,15 +8,17 @@ function NearbyCities() {
   ];
 
   return (
-    <div style={{ display: 'flex', overflowX: 'auto', gap: '10px' }}>
+    <div className="container">
+    <div className="grid" style={{ overflowX: 'auto' }}>
       {cities.map((c) => (
-        <div key={c.id} style={{ minWidth: '180px', border: '1px solid #ccc', padding: '10px' }}>
+        <div key={c.id} className="card" style={{ minWidth: '180px' }}>
           <h3>{c.name}</h3>
           <p>{c.distance}</p>
           <p>{c.highlights}</p>
           <p>{c.transport}</p>
         </div>
       ))}
+    </div>
     </div>
   );
 }

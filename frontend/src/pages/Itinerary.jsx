@@ -15,7 +15,7 @@ function Itinerary() {
   ];
 
   return (
-    <div>
+    <div className="container">
       {days.map((d) => (
         <DayBox key={d.id} style={{ backgroundColor: d.color }}>
           {d.label} - Activities here <a href="#">Book All</a>

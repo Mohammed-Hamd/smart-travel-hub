@@ -10,15 +10,17 @@ function Attractions() {
   ];
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+    <div className="container">
+    <div className="grid">
       {attractions.map((a) => (
-        <div key={a.id} style={{ border: '1px solid #ccc', padding: '10px', width: '180px' }}>
+        <div key={a.id} className="card">
           <img src={`https://via.placeholder.com/160x90?text=${encodeURIComponent(a.title)}`} alt={a.title} />
           <h3>{a.title}</h3>
           <p>{a.description}</p>
           <a href={a.link} target="_blank" rel="noopener noreferrer">Book Now</a>
         </div>
       ))}
+    </div>
     </div>
   );
 }

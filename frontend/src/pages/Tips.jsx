@@ -9,11 +9,13 @@ function Tips() {
   ];
 
   return (
+    <div className="container">
     <ul>
       {tips.map((tip, index) => (
         <li key={index}>{tip}</li>
       ))}
     </ul>
+    </div>
   );
 }
 
