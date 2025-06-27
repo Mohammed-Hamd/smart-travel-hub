@@ -4,12 +4,12 @@ import { Container, Grid } from '../styles/components';
 function Monetization() {
   return (
     <Container>
-      <img src="https://via.placeholder.com/800x200?text=Partners" alt="partners" />
+      <img src="https://source.unsplash.com/800x200/?airport" alt="partners" />
       <h3>Partners</h3>
       <Grid>
-        <img src="https://via.placeholder.com/100x50?text=AdSense" alt="AdSense" />
-        <img src="https://via.placeholder.com/100x50?text=Directory" alt="Directory" />
-        <img src="https://via.placeholder.com/100x50?text=SmartPass" alt="SmartPass" />
+        <img src="https://source.unsplash.com/100x50/?city" alt="AdSense" />
+        <img src="https://source.unsplash.com/100x50/?landscape" alt="Directory" />
+        <img src="https://source.unsplash.com/100x50/?adventure" alt="SmartPass" />
       </Grid>
     </Container>
   );
