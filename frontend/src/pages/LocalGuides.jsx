@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, StyledTable, Th, Td, Button } from '../styles/components';
+import Hero from '../components/Hero';
 
 const guides = [
   {
@@ -43,6 +44,11 @@ function LocalGuides() {
 
   return (
     <Container>
+      <Hero
+        title="Local Guides"
+        subtitle="Connect with experts"
+        background="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=80"
+      />
     <StyledTable>
       <thead>
         <tr>

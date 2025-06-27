@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Container, Button } from '../styles/components';
+import Hero from '../components/Hero';
 
 const DayBox = styled.div`
   padding: 10px;
@@ -30,6 +31,11 @@ function Itinerary() {
 
   return (
     <Container>
+      <Hero
+        title="Trip Planner"
+        subtitle="Customize your daily itinerary"
+        background="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      />
       {days.map((d) => (
         <DayBox key={d.id} style={{ backgroundColor: d.color }}>
           <strong>{d.label}</strong>

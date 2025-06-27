@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Card, Button } from '../styles/components';
+import Hero from '../components/Hero';
 
 function Attractions() {
   const attractions = [
@@ -37,6 +38,11 @@ function Attractions() {
 
   return (
     <Container>
+      <Hero
+        title="Top Attractions"
+        subtitle="Must-see places around Toronto"
+        background="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80"
+      />
       <Grid>
         {attractions.map((a) => (
           <Card key={a.id}>
