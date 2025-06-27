@@ -3,11 +3,36 @@ import { Container, Grid, Card, Button } from '../styles/components';
 
 function Attractions() {
   const attractions = [
-    { id: 1, title: 'CN Tower', description: 'Iconic tower', link: '#' },
-    { id: 2, title: 'Royal Ontario Museum', description: 'Museum exhibits', link: '#' },
-    { id: 3, title: 'Toronto Islands', description: 'Island parks', link: '#' },
-    { id: 4, title: 'Casa Loma', description: 'Gothic Revival castle', link: '#' },
-    { id: 5, title: 'Ripley\'s Aquarium', description: 'Aquarium fun', link: '#' },
+    {
+      id: 1,
+      title: 'CN Tower',
+      description: 'Toronto\'s most recognizable landmark with panoramic views.',
+      link: 'https://goo.gl/maps/v8uvVwbnEoR44kuZ9'
+    },
+    {
+      id: 2,
+      title: 'Royal Ontario Museum',
+      description: 'World-class museum showcasing art, culture and nature.',
+      link: 'https://goo.gl/maps/bUy2HtMJTHcV4Eu66'
+    },
+    {
+      id: 3,
+      title: 'St. Lawrence Market',
+      description: 'Historic market famed for its artisanal foods.',
+      link: 'https://goo.gl/maps/i5E6nDUK6W3SoWq16'
+    },
+    {
+      id: 4,
+      title: 'Distillery District',
+      description: 'Cobblestone streets lined with boutiques and eateries.',
+      link: 'https://goo.gl/maps/45mHNByz3g8x6GsS8'
+    },
+    {
+      id: 5,
+      title: 'Toronto Islands',
+      description: 'A chain of islands offering beaches and recreation.',
+      link: 'https://goo.gl/maps/TWzQPaMPN03GYjy98'
+    },
   ];
 
   return (
@@ -15,10 +40,10 @@ function Attractions() {
       <Grid>
         {attractions.map((a) => (
           <Card key={a.id}>
-          <img src={`https://source.unsplash.com/160x90/?landscape,${encodeURIComponent(a.title)}`} alt={a.title} />
+            <img src={`https://source.unsplash.com/160x90/?${encodeURIComponent(a.title)}`} alt={a.title} />
             <h3>{a.title}</h3>
             <p>{a.description}</p>
-            <Button as="a" href={a.link} target="_blank" rel="noopener noreferrer">Book Now</Button>
+            <Button as="a" href={a.link} target="_blank" rel="noopener noreferrer">View on Maps</Button>
           </Card>
         ))}
       </Grid>
