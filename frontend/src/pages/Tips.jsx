@@ -11,7 +11,7 @@ function Tips() {
 
   return (
     <Container>
-    <img src="https://via.placeholder.com/800x200?text=Travel+Tips" alt="tips" />
+    <img src="https://source.unsplash.com/800x200/?destination" alt="tips" />
     <ul>
       {tips.map((tip, index) => (
         <li key={index}>{tip}</li>

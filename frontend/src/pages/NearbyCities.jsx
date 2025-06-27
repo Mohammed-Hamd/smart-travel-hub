@@ -13,7 +13,7 @@ function NearbyCities() {
     <Grid style={{ overflowX: 'auto' }}>
       {cities.map((c) => (
         <Card key={c.id} style={{ minWidth: '180px' }}>
-          <img src={`https://via.placeholder.com/160x90?text=${encodeURIComponent(c.name)}`} alt={c.name} />
+          <img src={`https://source.unsplash.com/160x90/?city,${encodeURIComponent(c.name)}`} alt={c.name} />
           <h3>{c.name}</h3>
           <p>{c.distance}</p>
           <p>{c.highlights}</p>

@@ -10,7 +10,7 @@ function FoodCulture() {
 
   return (
     <Container>
-    <img src="https://via.placeholder.com/800x200?text=Food" alt="Food" />
+    <img src="https://source.unsplash.com/800x200/?destination" alt="Food" />
     <StyledTable>
       <thead>
         <tr>

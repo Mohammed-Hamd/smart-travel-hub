@@ -15,7 +15,7 @@ function Attractions() {
       <Grid>
         {attractions.map((a) => (
           <Card key={a.id}>
-            <img src={`https://via.placeholder.com/160x90?text=${encodeURIComponent(a.title)}`} alt={a.title} />
+          <img src={`https://source.unsplash.com/160x90/?landscape,${encodeURIComponent(a.title)}`} alt={a.title} />
             <h3>{a.title}</h3>
             <p>{a.description}</p>
             <Button as="a" href={a.link} target="_blank" rel="noopener noreferrer">Book Now</Button>

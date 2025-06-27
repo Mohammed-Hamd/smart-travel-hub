@@ -10,7 +10,7 @@ function Essentials() {
 
   return (
     <Container>
-    <img src="https://via.placeholder.com/800x200?text=Essentials" alt="essentials" />
+    <img src="https://source.unsplash.com/800x200/?landscape" alt="essentials" />
     <ul>
       {items.map((item) => (
         <li key={item.id}>{item.need} - {item.location}</li>
