@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from '../styles/components';
 
 function Tips() {
   const tips = [
@@ -9,13 +10,14 @@ function Tips() {
   ];
 
   return (
-    <div className="container">
+    <Container>
+    <img src="https://via.placeholder.com/800x200?text=Travel+Tips" alt="tips" />
     <ul>
       {tips.map((tip, index) => (
         <li key={index}>{tip}</li>
       ))}
     </ul>
-    </div>
+    </Container>
   );
 }
 

@@ -1,11 +1,13 @@
 import React from 'react';
+import { Card } from '../styles/components';
 
-function TravelCard({ title, description }) {
+function TravelCard({ title, description, image }) {
   return (
-    <div className="card">
+    <Card>
+      {image && <img src={image} alt={title} />}
       <h3>{title}</h3>
       <p>{description}</p>
-    </div>
+    </Card>
   );
 }
 
