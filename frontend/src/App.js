@@ -11,13 +11,13 @@ import Itinerary from './pages/Itinerary';
 import Essentials from './pages/Essentials';
 import Nightlife from './pages/Nightlife';
 import Monetization from './pages/Monetization';
-import './App.css';
+import { Container } from './styles/components';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <div className="container">
+      <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/attractions" element={<Attractions />} />
@@ -30,7 +30,7 @@ function App() {
           <Route path="/nightlife" element={<Nightlife />} />
           <Route path="/monetization" element={<Monetization />} />
         </Routes>
-      </div>
+      </Container>
     </div>
   );
 }

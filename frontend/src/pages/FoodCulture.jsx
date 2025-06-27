@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, StyledTable, Th, Td } from '../styles/components';
 
 function FoodCulture() {
   const foods = [
@@ -8,26 +9,27 @@ function FoodCulture() {
   ];
 
   return (
-    <div className="container">
-    <table>
+    <Container>
+    <img src="https://via.placeholder.com/800x200?text=Food" alt="Food" />
+    <StyledTable>
       <thead>
         <tr>
-          <th>Cuisine</th>
-          <th>Restaurant</th>
-          <th>Booking</th>
+          <Th>Cuisine</Th>
+          <Th>Restaurant</Th>
+          <Th>Booking</Th>
         </tr>
       </thead>
       <tbody>
         {foods.map((f) => (
           <tr key={f.id}>
-            <td>{f.type}</td>
-            <td>{f.restaurant}</td>
-            <td>{f.booking}</td>
+            <Td>{f.type}</Td>
+            <Td>{f.restaurant}</Td>
+            <Td>{f.booking}</Td>
           </tr>
         ))}
       </tbody>
-    </table>
-    </div>
+    </StyledTable>
+    </Container>
   );
 }
 

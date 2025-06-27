@@ -1,15 +1,17 @@
 import React from 'react';
+import { Container, Grid } from '../styles/components';
 
 function Monetization() {
   return (
-    <div className="container">
+    <Container>
+      <img src="https://via.placeholder.com/800x200?text=Partners" alt="partners" />
       <h3>Partners</h3>
-      <div className="grid">
+      <Grid>
         <img src="https://via.placeholder.com/100x50?text=AdSense" alt="AdSense" />
         <img src="https://via.placeholder.com/100x50?text=Directory" alt="Directory" />
         <img src="https://via.placeholder.com/100x50?text=SmartPass" alt="SmartPass" />
-      </div>
-    </div>
+      </Grid>
+    </Container>
   );
 }
 

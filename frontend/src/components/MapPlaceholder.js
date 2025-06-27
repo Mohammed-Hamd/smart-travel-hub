@@ -1,10 +1,11 @@
 import React from 'react';
+import { MapPlaceholderBox } from '../styles/components';
 
 function MapPlaceholder() {
   return (
-    <div className="map-placeholder">
+    <MapPlaceholderBox>
       <p>Map will be displayed here</p>
-    </div>
+    </MapPlaceholderBox>
   );
 }
 

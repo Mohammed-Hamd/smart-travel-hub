@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Grid, Card } from '../styles/components';
 
 function NearbyCities() {
   const cities = [
@@ -8,18 +9,19 @@ function NearbyCities() {
   ];
 
   return (
-    <div className="container">
-    <div className="grid" style={{ overflowX: 'auto' }}>
+    <Container>
+    <Grid style={{ overflowX: 'auto' }}>
       {cities.map((c) => (
-        <div key={c.id} className="card" style={{ minWidth: '180px' }}>
+        <Card key={c.id} style={{ minWidth: '180px' }}>
+          <img src={`https://via.placeholder.com/160x90?text=${encodeURIComponent(c.name)}`} alt={c.name} />
           <h3>{c.name}</h3>
           <p>{c.distance}</p>
           <p>{c.highlights}</p>
           <p>{c.transport}</p>
-        </div>
+        </Card>
       ))}
-    </div>
-    </div>
+    </Grid>
+    </Container>
   );
 }
 

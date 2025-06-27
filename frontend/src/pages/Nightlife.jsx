@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from '../styles/components';
 
 function Nightlife() {
   const events = [
@@ -8,13 +9,14 @@ function Nightlife() {
   ];
 
   return (
-    <div className="container">
+    <Container>
+    <img src="https://via.placeholder.com/800x200?text=Nightlife" alt="nightlife" />
     <ul>
       {events.map((e, idx) => (
         <li key={idx}>{e}</li>
       ))}
     </ul>
-    </div>
+    </Container>
   );
 }
 

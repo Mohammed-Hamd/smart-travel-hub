@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from '../styles/components';
 
 function Essentials() {
   const items = [
@@ -8,13 +9,14 @@ function Essentials() {
   ];
 
   return (
-    <div className="container">
+    <Container>
+    <img src="https://via.placeholder.com/800x200?text=Essentials" alt="essentials" />
     <ul>
       {items.map((item) => (
         <li key={item.id}>{item.need} - {item.location}</li>
       ))}
     </ul>
-    </div>
+    </Container>
   );
 }
 

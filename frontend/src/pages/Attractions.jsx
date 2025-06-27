@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Grid, Card, Button } from '../styles/components';
 
 function Attractions() {
   const attractions = [
@@ -10,18 +11,18 @@ function Attractions() {
   ];
 
   return (
-    <div className="container">
-    <div className="grid">
-      {attractions.map((a) => (
-        <div key={a.id} className="card">
-          <img src={`https://via.placeholder.com/160x90?text=${encodeURIComponent(a.title)}`} alt={a.title} />
-          <h3>{a.title}</h3>
-          <p>{a.description}</p>
-          <a href={a.link} target="_blank" rel="noopener noreferrer">Book Now</a>
-        </div>
-      ))}
-    </div>
-    </div>
+    <Container>
+      <Grid>
+        {attractions.map((a) => (
+          <Card key={a.id}>
+            <img src={`https://via.placeholder.com/160x90?text=${encodeURIComponent(a.title)}`} alt={a.title} />
+            <h3>{a.title}</h3>
+            <p>{a.description}</p>
+            <Button as="a" href={a.link} target="_blank" rel="noopener noreferrer">Book Now</Button>
+          </Card>
+        ))}
+      </Grid>
+    </Container>
   );
 }
 

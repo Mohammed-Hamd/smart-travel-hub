@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, StyledTable, Th, Td, Button } from '../styles/components';
 
 function LocalGuides() {
   const guides = [
@@ -8,30 +9,30 @@ function LocalGuides() {
   ];
 
   return (
-    <div className="container">
-    <table>
+    <Container>
+    <StyledTable>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Languages</th>
-          <th>Rate</th>
-          <th>Vehicle</th>
-          <th>Booking</th>
+          <Th>Name</Th>
+          <Th>Languages</Th>
+          <Th>Rate</Th>
+          <Th>Vehicle</Th>
+          <Th>Booking</Th>
         </tr>
       </thead>
       <tbody>
         {guides.map((g) => (
           <tr key={g.id}>
-            <td>{g.name}</td>
-            <td>{g.languages}</td>
-            <td>{g.rate}</td>
-            <td>{g.vehicle}</td>
-            <td><button className="button">Book</button></td>
+            <Td>{g.name}</Td>
+            <Td>{g.languages}</Td>
+            <Td>{g.rate}</Td>
+            <Td>{g.vehicle}</Td>
+            <Td><Button>Book</Button></Td>
           </tr>
         ))}
       </tbody>
-    </table>
-    </div>
+    </StyledTable>
+    </Container>
   );
 }
 

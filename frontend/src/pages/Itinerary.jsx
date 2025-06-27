@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Container } from '../styles/components';
 
 const DayBox = styled.div`
   padding: 10px;
@@ -15,13 +16,13 @@ function Itinerary() {
   ];
 
   return (
-    <div className="container">
+    <Container>
       {days.map((d) => (
         <DayBox key={d.id} style={{ backgroundColor: d.color }}>
           {d.label} - Activities here <a href="#">Book All</a>
         </DayBox>
       ))}
-    </div>
+    </Container>
   );
 }
 
