@@ -1,21 +1,29 @@
 import React from 'react';
-import { Container } from '../styles/components';
+import { Container, Grid, Card } from '../styles/components';
+import { DevicePhoneMobileIcon, TicketIcon, MapIcon } from '@heroicons/react/24/outline';
+
+const items = [
+  { id: 1, need: 'SIM Card', location: 'Airalo', icon: DevicePhoneMobileIcon },
+  { id: 2, need: 'Transit Card', location: 'Shoppers Drug Mart', icon: TicketIcon },
+  { id: 3, need: 'City Map App', location: 'Google Maps', icon: MapIcon },
+];
 
 function Essentials() {
-  const items = [
-    { id: 1, need: 'SIM', location: 'Airalo' },
-    { id: 2, need: 'Toiletries', location: 'Walmart' },
-    { id: 3, need: 'Transit Card', location: 'Shoppers Drug Mart' },
-  ];
-
   return (
     <Container>
-    <img src="https://source.unsplash.com/800x200/?landscape" alt="essentials" />
-    <ul>
-      {items.map((item) => (
-        <li key={item.id}>{item.need} - {item.location}</li>
-      ))}
-    </ul>
+      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80" alt="essentials" />
+      <Grid style={{ marginTop: '20px' }}>
+        {items.map((item) => {
+          const Icon = item.icon;
+          return (
+            <Card key={item.id} title={item.location} style={{ textAlign: 'center' }}>
+              <Icon width={32} height={32} />
+              <h4>{item.need}</h4>
+              <p>{item.location}</p>
+            </Card>
+          );
+        })}
+      </Grid>
     </Container>
   );
 }

@@ -77,6 +77,11 @@ export const MapPlaceholderBox = styled.div`
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.9rem;
+
+  tbody tr:nth-child(odd) {
+    background-color: #f6f8fa;
+  }
 `;
 
 export const Th = styled.th`
