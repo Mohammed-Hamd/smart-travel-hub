@@ -11,12 +11,13 @@ import Itinerary from './pages/Itinerary';
 import Essentials from './pages/Essentials';
 import Nightlife from './pages/Nightlife';
 import Monetization from './pages/Monetization';
+import './App.css';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <div style={{ padding: '20px' }}>
+      <div className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/attractions" element={<Attractions />} />
