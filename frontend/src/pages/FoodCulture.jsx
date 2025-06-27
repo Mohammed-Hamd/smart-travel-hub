@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, StyledTable, Th, Td } from '../styles/components';
+import Hero from '../components/Hero';
 
 const foods = [
   {
@@ -29,7 +30,11 @@ function FoodCulture() {
 
   return (
     <Container>
-    <img src="https://source.unsplash.com/800x200/?destination" alt="Food" />
+      <Hero
+        title="Food & Culture"
+        subtitle="Taste the diversity of Toronto"
+        background="https://source.unsplash.com/1200x400/?food,toronto"
+      />
     <StyledTable>
       <thead>
         <tr>

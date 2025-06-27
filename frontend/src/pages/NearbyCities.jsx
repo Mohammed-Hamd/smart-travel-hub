@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Card } from '../styles/components';
+import Hero from '../components/Hero';
 
 function NearbyCities() {
   const cities = [
@@ -10,6 +11,11 @@ function NearbyCities() {
 
   return (
     <Container>
+      <Hero
+        title="Nearby Cities"
+        subtitle="Explore beyond Toronto"
+        background="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80"
+      />
     <Grid style={{ overflowX: 'auto' }}>
       {cities.map((c) => (
         <Card key={c.id} style={{ minWidth: '180px' }}>

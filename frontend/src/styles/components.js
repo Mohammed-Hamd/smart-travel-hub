@@ -10,6 +10,28 @@ export const Container = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 `;
 
+export const HeroSection = styled.section`
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  background-image: url(${(p) => p.bg});
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+`;
+
+export const HeroOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+`;
+
+export const HeroContent = styled.div`
+  position: relative;
+  z-index: 1;
+`;
+
 export const NavbarWrapper = styled.nav`
   background-color: #fff;
   border-bottom: 1px solid #ddd;
@@ -65,13 +87,12 @@ export const SearchInput = styled.input`
   margin-right: 8px;
 `;
 
-export const MapPlaceholderBox = styled.div`
+export const MapBox = styled.div`
   margin-top: 20px;
-  height: 200px;
+  height: 300px;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 `;
 
 export const StyledTable = styled.table`

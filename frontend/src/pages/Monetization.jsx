@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Card } from '../styles/components';
+import Hero from '../components/Hero';
 
 function Monetization() {
   const partners = [
@@ -25,7 +26,11 @@ function Monetization() {
 
   return (
     <Container>
-      <img src="https://source.unsplash.com/800x200/?airport" alt="partners" />
+      <Hero
+        title="Partners"
+        subtitle="Ways we keep the lights on"
+        background="https://source.unsplash.com/1200x400/?airport,toronto"
+      />
       <h3>Partners</h3>
       <Grid>
         {partners.map(p => (

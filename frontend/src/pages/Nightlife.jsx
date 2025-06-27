@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Card } from '../styles/components';
+import Hero from '../components/Hero';
 import { MusicalNoteIcon } from '@heroicons/react/24/outline';
 
 function Nightlife() {
@@ -11,7 +12,11 @@ function Nightlife() {
 
   return (
     <Container>
-      <img src="https://source.unsplash.com/800x200/?night" alt="nightlife" />
+      <Hero
+        title="Nightlife"
+        subtitle="Experience Toronto after dark"
+        background="https://source.unsplash.com/1200x400/?night,toronto"
+      />
       <Grid style={{ marginTop: '20px' }}>
         {events.map((e) => (
           <Card key={e.title} style={{ flex: '1 0 150px' }}>

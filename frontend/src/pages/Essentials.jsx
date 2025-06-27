@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Card } from '../styles/components';
+import Hero from '../components/Hero';
 import { DevicePhoneMobileIcon, TicketIcon, MapIcon } from '@heroicons/react/24/outline';
 
 const items = [
@@ -11,7 +12,11 @@ const items = [
 function Essentials() {
   return (
     <Container>
-      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80" alt="essentials" />
+      <Hero
+        title="Toronto Essentials"
+        subtitle="Things you should have on arrival"
+        background="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80"
+      />
       <Grid style={{ marginTop: '20px' }}>
         {items.map((item) => {
           const Icon = item.icon;

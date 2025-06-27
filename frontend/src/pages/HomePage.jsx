@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
 import { Container, Grid } from '../styles/components';
+import styled from 'styled-components';
+import Hero from '../components/Hero';
+import Map from '../components/Map';
 
-const Hero = styled.section`
-  background-image: url('https://images.unsplash.com/photo-1534351590666-13e439b4e83b?auto=format&fit=crop&w=1200&q=80');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-  border-radius: 10px;
-`;
 
 const PartnerCard = styled.a`
   display: block;
@@ -32,9 +25,7 @@ function HomePage() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const key = process.env.REACT_APP_OPENWEATHER_KEY;
-    if (!key) return;
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric&appid=${key}`)
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric&appid=29d294eef9e21cc10792af93d19ad1cc')
       .then(res => res.json())
       .then(data => setWeather(data.main.temp))
       .catch(() => {});
@@ -47,13 +38,15 @@ function HomePage() {
 
   return (
     <Container>
-      <Hero>
-        <h1>Smart Travel Hub</h1>
-        <p>Your gateway to exploring Toronto</p>
-      </Hero>
+      <Hero
+        title="Smart Travel Hub"
+        subtitle="Your gateway to exploring Toronto"
+        background="https://images.unsplash.com/photo-1534351590666-13e439b4e83b?auto=format&fit=crop&w=1200&q=80"
+      />
       <p>Current Weather: {weather ? `${weather}°C` : '--'}</p>
       <p>Local Time: {time.toLocaleString('en-CA', { timeZone: 'America/Toronto', timeStyle: 'short', dateStyle: 'long' })}</p>
       <p>Smart Travel Hub helps you discover attractions, food, nightlife and more around Toronto.</p>
+      <Map />
       <Grid style={{ marginTop: '20px' }}>
         <PartnerCard href="https://www.airalo.com" target="_blank" rel="noreferrer">
           <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&q=60" alt="Airalo" />
