@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '../styles/components';
+import { Container, Button } from '../styles/components';
 import Hero from '../components/Hero';
 
 function Tips() {
@@ -22,6 +22,9 @@ function Tips() {
         <li key={index}>{tip}</li>
       ))}
     </ul>
+    <p style={{ textAlign: 'center', marginTop: '20px' }}>
+      <Button as="a" href="#">Share your tips</Button>
+    </p>
     </Container>
   );
 }

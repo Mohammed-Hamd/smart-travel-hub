@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Container, Grid } from '../styles/components';
+import { Container, Grid, Button } from '../styles/components';
 import styled from 'styled-components';
 import Hero from '../components/Hero';
 import Map from '../components/Map';
+import { CheckCircleIcon, MapIcon, ChatBubbleLeftRightIcon, TicketIcon } from '@heroicons/react/24/solid';
 
 
 const PartnerCard = styled.a`
@@ -16,6 +17,26 @@ const PartnerCard = styled.a`
   text-align: center;
   &:hover {
     transform: translateY(-3px);
+  }
+`;
+
+const TwoColumn = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+const Column = styled.div`
+  flex: 1 1 300px;
+`;
+
+const Bullet = styled.li`
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  svg {
+    margin-right: 6px;
   }
 `;
 
@@ -46,7 +67,28 @@ function HomePage() {
       <p>Current Weather: {weather ? `${weather}°C` : '--'}</p>
       <p>Local Time: {time.toLocaleString('en-CA', { timeZone: 'America/Toronto', timeStyle: 'short', dateStyle: 'long' })}</p>
       <p>Smart Travel Hub helps you discover attractions, food, nightlife and more around Toronto.</p>
-      <Map />
+
+      <TwoColumn>
+        <Column>
+          <Map />
+        </Column>
+        <Column>
+          <h3>Why Choose Toronto?</h3>
+          <ul>
+            <Bullet><CheckCircleIcon width={20} />Diverse attractions for every traveler</Bullet>
+            <Bullet><CheckCircleIcon width={20} />Vibrant multicultural food scene</Bullet>
+            <Bullet><CheckCircleIcon width={20} />Easy access from major cities</Bullet>
+          </ul>
+
+          <h3 style={{ marginTop: '20px' }}>Explore Services</h3>
+          <ul>
+            <Bullet><MapIcon width={20} />Custom itineraries</Bullet>
+            <Bullet><ChatBubbleLeftRightIcon width={20} />Local guides</Bullet>
+            <Bullet><TicketIcon width={20} />Event booking</Bullet>
+          </ul>
+        </Column>
+      </TwoColumn>
+
       <Grid style={{ marginTop: '20px' }}>
         <PartnerCard href="https://www.airalo.com" target="_blank" rel="noreferrer">
           <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&q=60" alt="Airalo" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Card } from '../styles/components';
+import { Container, Grid, Card, Button } from '../styles/components';
 import Hero from '../components/Hero';
 import { DevicePhoneMobileIcon, TicketIcon, MapIcon } from '@heroicons/react/24/outline';
 
@@ -29,6 +29,9 @@ function Essentials() {
           );
         })}
       </Grid>
+      <p style={{ marginTop: '20px', textAlign: 'center' }}>
+        <Button as="a" href="#">Get these essentials</Button>
+      </p>
     </Container>
   );
 }

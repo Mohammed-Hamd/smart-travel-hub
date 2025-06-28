@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Card } from '../styles/components';
+import { Container, Grid, Card, Button } from '../styles/components';
 import Hero from '../components/Hero';
 import { MusicalNoteIcon } from '@heroicons/react/24/outline';
 
@@ -27,6 +27,9 @@ function Nightlife() {
           </Card>
         ))}
       </Grid>
+      <p style={{ textAlign: 'center', marginTop: '20px' }}>
+        <Button as="a" href="#">See all events</Button>
+      </p>
     </Container>
   );
 }

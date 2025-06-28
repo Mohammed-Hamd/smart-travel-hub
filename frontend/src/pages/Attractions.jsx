@@ -53,6 +53,9 @@ function Attractions() {
           </Card>
         ))}
       </Grid>
+      <p style={{ marginTop: '20px', textAlign: 'center' }}>
+        Ready for adventure? <Button as="a" href="#">Plan your visit</Button>
+      </p>
     </Container>
   );
 }

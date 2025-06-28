@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import COLORS from './colors';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -10,15 +11,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f4f6f9;
-    color: #333;
+    background-color: ${COLORS.lightBg};
+    color: ${COLORS.text};
   }
   img {
     max-width: 100%;
     display: block;
   }
   a {
-    color: #007bff;
+    color: ${COLORS.secondary};
     text-decoration: none;
   }
 `;
