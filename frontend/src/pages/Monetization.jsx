@@ -29,7 +29,7 @@ function Monetization() {
       <Hero
         title="Partners"
         subtitle="Ways we keep the lights on"
-        background="https://source.unsplash.com/1200x400/?airport,toronto"
+        background="https://images.pexels.com/photos/1433052/pexels-photo-1433052.jpeg?auto=compress&cs=tinysrgb&h=400"
       />
       <h3>Partners</h3>
       <Grid>

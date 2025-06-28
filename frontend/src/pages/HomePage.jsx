@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Container, Grid, Button } from '../styles/components';
+import { Container, Grid } from '../styles/components';
 import styled from 'styled-components';
 import Hero from '../components/Hero';
 import Map from '../components/Map';
-import { CheckCircleIcon, MapIcon, ChatBubbleLeftRightIcon, TicketIcon } from '@heroicons/react/24/solid';
-
+import {
+  CheckCircleIcon,
+  MapIcon,
+  ChatBubbleLeftRightIcon,
+  TicketIcon,
+} from '@heroicons/react/24/solid';
 
 const PartnerCard = styled.a`
   display: block;
@@ -17,6 +21,13 @@ const PartnerCard = styled.a`
   text-align: center;
   &:hover {
     transform: translateY(-3px);
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    height: 100px;
+    object-fit: cover;
   }
 `;
 
@@ -62,11 +73,22 @@ function HomePage() {
       <Hero
         title="Smart Travel Hub"
         subtitle="Your gateway to exploring Toronto"
-        background="https://images.unsplash.com/photo-1534351590666-13e439b4e83b?auto=format&fit=crop&w=1200&q=80"
+        background="https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=1200"
       />
+
       <p>Current Weather: {weather ? `${weather}°C` : '--'}</p>
-      <p>Local Time: {time.toLocaleString('en-CA', { timeZone: 'America/Toronto', timeStyle: 'short', dateStyle: 'long' })}</p>
-      <p>Smart Travel Hub helps you discover attractions, food, nightlife and more around Toronto.</p>
+      <p>
+        Local Time:{' '}
+        {time.toLocaleString('en-CA', {
+          timeZone: 'America/Toronto',
+          timeStyle: 'short',
+          dateStyle: 'long',
+        })}
+      </p>
+      <p>
+        Smart Travel Hub helps you discover attractions, food, nightlife and more
+        around Toronto.
+      </p>
 
       <TwoColumn>
         <Column>
@@ -91,10 +113,16 @@ function HomePage() {
 
       <Grid style={{ marginTop: '20px' }}>
         <PartnerCard href="https://www.airalo.com" target="_blank" rel="noreferrer">
-          <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&q=60" alt="Airalo" />
+          <img
+            src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=200&q=60"
+            alt="Airalo"
+          />
         </PartnerCard>
         <PartnerCard href="https://www.visitorscoverage.com" target="_blank" rel="noreferrer">
-          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=200&q=60" alt="VisitorsCoverage" />
+          <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=200&q=60"
+            alt="VisitorsCoverage"
+          />
         </PartnerCard>
       </Grid>
     </Container>

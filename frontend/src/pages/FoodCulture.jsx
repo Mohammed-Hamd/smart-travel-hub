@@ -8,56 +8,55 @@ const foods = [
     type: 'Canadian',
     restaurant: 'Maple Diner',
     booking: 'https://www.opentable.com/',
-    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=80&q=60'
+    img: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&h=80'
   },
   {
     id: 2,
     type: 'Chinese',
     restaurant: 'Dragon City',
     booking: 'https://example.com',
-    img: 'https://images.unsplash.com/photo-1543357480-c60d457bccaa?auto=format&fit=crop&w=80&q=60'
+    img: 'https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&h=80'
   },
   {
     id: 3,
     type: 'Italian',
     restaurant: 'Pasta House',
     booking: 'https://www.opentable.com/',
-    img: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=80&q=60'
+    img: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&h=80'
   },
 ];
 
 function FoodCulture() {
-
   return (
     <Container>
       <Hero
         title="Food & Culture"
         subtitle="Taste the diversity of Toronto"
-        background="https://source.unsplash.com/1200x400/?food,toronto"
+        background="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&h=400"
       />
-    <StyledTable>
-      <thead>
-        <tr>
-          <Th></Th>
-          <Th>Cuisine</Th>
-          <Th>Restaurant</Th>
-          <Th>Booking</Th>
-        </tr>
-      </thead>
-      <tbody>
-        {foods.map((f) => (
-          <tr key={f.id}>
-            <Td><img src={f.img} alt="" /></Td>
-            <Td>{f.type}</Td>
-            <Td>{f.restaurant}</Td>
-            <Td><a href={f.booking} target="_blank" rel="noreferrer">Link</a></Td>
+      <StyledTable>
+        <thead>
+          <tr>
+            <Th></Th>
+            <Th>Cuisine</Th>
+            <Th>Restaurant</Th>
+            <Th>Booking</Th>
           </tr>
-        ))}
-      </tbody>
-    </StyledTable>
-    <p style={{ marginTop: '20px', textAlign: 'center' }}>
-      Hungry? <Button as="a" href="#">Book a table</Button>
-    </p>
+        </thead>
+        <tbody>
+          {foods.map((f) => (
+            <tr key={f.id}>
+              <Td><img src={f.img} alt={f.type} /></Td>
+              <Td>{f.type}</Td>
+              <Td>{f.restaurant}</Td>
+              <Td><a href={f.booking} target="_blank" rel="noreferrer">Link</a></Td>
+            </tr>
+          ))}
+        </tbody>
+      </StyledTable>
+      <p style={{ marginTop: '20px', textAlign: 'center' }}>
+        Hungry? <Button as="a" href="#">Book a table</Button>
+      </p>
     </Container>
   );
 }
