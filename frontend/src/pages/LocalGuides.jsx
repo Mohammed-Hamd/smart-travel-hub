@@ -75,6 +75,9 @@ function LocalGuides() {
         ))}
       </tbody>
     </StyledTable>
+    <p style={{ textAlign: 'center', marginTop: '20px' }}>
+      <Button as="a" href="#">Contact a guide</Button>
+    </p>
     </Container>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, StyledTable, Th, Td } from '../styles/components';
+import { Container, StyledTable, Th, Td, Button } from '../styles/components';
 import Hero from '../components/Hero';
 
 const foods = [
@@ -55,6 +55,9 @@ function FoodCulture() {
         ))}
       </tbody>
     </StyledTable>
+    <p style={{ marginTop: '20px', textAlign: 'center' }}>
+      Hungry? <Button as="a" href="#">Book a table</Button>
+    </p>
     </Container>
   );
 }

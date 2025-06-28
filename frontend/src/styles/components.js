@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import COLORS from './colors';
 
 export const Container = styled.div`
   max-width: 960px;
@@ -33,8 +34,8 @@ export const HeroContent = styled.div`
 `;
 
 export const NavbarWrapper = styled.nav`
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  background-color: ${COLORS.primary};
+  border-bottom: 1px solid ${COLORS.secondary};
   padding: 15px 30px;
   display: flex;
   flex-wrap: wrap;
@@ -45,10 +46,10 @@ export const NavbarWrapper = styled.nav`
 export const NavItem = styled(Link)`
   margin-right: 20px;
   font-weight: 500;
-  color: #007bff;
+  color: ${COLORS.lightBg};
   text-decoration: none;
   &:hover {
-    text-decoration: underline;
+    color: ${COLORS.accent};
   }
 `;
 
@@ -69,7 +70,7 @@ export const Card = styled.div`
 
 export const Button = styled.button`
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  background-color: ${COLORS.accent};
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -91,7 +92,7 @@ export const MapBox = styled.div`
   margin-top: 20px;
   height: 300px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid ${COLORS.secondary};
   overflow: hidden;
 `;
 
@@ -101,18 +102,18 @@ export const StyledTable = styled.table`
   font-size: 0.9rem;
 
   tbody tr:nth-child(odd) {
-    background-color: #f6f8fa;
+    background-color: ${COLORS.lightBg};
   }
 `;
 
 export const Th = styled.th`
-  border: 1px solid #ccc;
+  border: 1px solid ${COLORS.secondary};
   padding: 0.5rem;
   text-align: left;
 `;
 
 export const Td = styled.td`
-  border: 1px solid #ccc;
+  border: 1px solid ${COLORS.secondary};
   padding: 0.5rem;
 `;
 
@@ -120,5 +121,5 @@ export const Select = styled.select`
   margin-left: 10px;
   padding: 6px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid ${COLORS.secondary};
 `;

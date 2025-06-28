@@ -49,6 +49,9 @@ function Itinerary() {
           </div>
         </DayBox>
       ))}
+      <p style={{ textAlign: 'center' }}>
+        <Button as="a" href="#">Save itinerary</Button>
+      </p>
     </Container>
   );
 }
