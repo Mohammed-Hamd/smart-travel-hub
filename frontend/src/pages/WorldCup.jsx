@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, Grid, Card, StyledTable, Th, Td } from '../styles/components';
+import dayjs from 'dayjs';
+import {
+  Container,
+  Grid,
+  Card,
+  StyledTable,
+  Th,
+  Td,
+  Section,
+  Ticker,
+  NewsGrid,
+  NewsCard,
+  Spinner,
+} from '../styles/components';
 import Hero from '../components/Hero';
 
 function WorldCup() {
@@ -11,6 +24,7 @@ function WorldCup() {
   const [upcomingMatches, setUpcomingMatches] = useState([]);
   const [pastMatches, setPastMatches] = useState([]);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const API_KEY = 'YOUR_API_KEY'; // Insert your API-Football key
   const API_BASE = 'https://v3.football.api-sports.io';
@@ -53,8 +67,29 @@ function WorldCup() {
     },
   ];
 
-  const formatDate = (d) => new Date(d).toLocaleDateString();
-  const formatTime = (d) => new Date(d).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const fallbackNews = [
+    {
+      title: 'Host cities confirmed for Club World Cup',
+      image: 'https://via.placeholder.com/300x140',
+      snippet: 'FIFA announces the stadiums that will stage the upcoming tournament.',
+      link: '#',
+    },
+    {
+      title: 'Star players to watch this year',
+      image: 'https://via.placeholder.com/300x140',
+      snippet: 'A look at the key talents expected to shine on the big stage.',
+      link: '#',
+    },
+    {
+      title: 'How the teams qualified',
+      image: 'https://via.placeholder.com/300x140',
+      snippet: 'Reviewing the path clubs took to earn their place in the competition.',
+      link: '#',
+    },
+  ];
+
+  const formatDate = (d) => dayjs(d).format('MMM D, YYYY');
+  const formatTime = (d) => dayjs(d).format('HH:mm');
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -65,6 +100,7 @@ function WorldCup() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const standingsRes = await axios.get(`${API_BASE}/standings`, {
           params: { league: LEAGUE_ID, season: SEASON },
@@ -109,6 +145,8 @@ function WorldCup() {
         setStandings(fallbackStandings);
         setUpcomingMatches(fallbackUpcoming);
         setPastMatches(fallbackPast);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -116,84 +154,124 @@ function WorldCup() {
 
   return (
     <Container>
-      <Hero
-        title="FIFA Club World Cup"
-        subtitle="Live Updates"
-        background="https://img.fifa.com/image/upload/fifa-world-cup.jpg"
-      />
-      <h2 style={{ textAlign: 'center', margin: '20px 0' }}>{daysLeft} days left until the FIFA World Cup Final</h2>
-
-      <h3>Group Standings</h3>
-      <Grid>
-        {standings.map((g) => (
-          <Card key={g.group} style={{ minWidth: '250px' }}>
-            <h4>{g.group}</h4>
-            <StyledTable>
-              <thead>
-                <tr>
-                  <Th>Team</Th>
-                  <Th>Pts</Th>
-                  <Th>W</Th>
-                  <Th>L</Th>
-                  <Th>D</Th>
-                </tr>
-              </thead>
-              <tbody>
-                {g.teams.map((t) => (
-                  <tr key={t.name}>
-                    <Td>
-                      <img src={t.logo} alt={t.name} width="20" style={{ marginRight: '4px' }} />
-                      {t.name}
-                    </Td>
-                    <Td>{t.points}</Td>
-                    <Td>{t.wins}</Td>
-                    <Td>{t.losses}</Td>
-                    <Td>{t.draws}</Td>
-                  </tr>
-                ))}
-              </tbody>
-            </StyledTable>
-          </Card>
-        ))}
-      </Grid>
-
-      <h3 style={{ marginTop: '20px' }}>Upcoming Matches</h3>
-      <Grid>
+      <Ticker>
         {upcomingMatches.map((m, idx) => (
-          <Card key={idx} style={{ minWidth: '250px' }}>
-            <h4>
-              <img src={m.logo1} alt={m.team1} width="20" style={{ marginRight: '4px' }} />
-              {m.team1} vs {m.team2}
-              <img src={m.logo2} alt={m.team2} width="20" style={{ marginLeft: '4px' }} />
-            </h4>
-            <p>
-              {formatDate(m.date)} {formatTime(m.date)}
-            </p>
-            <p>
-              {m.stadium}, {m.city}
-            </p>
-          </Card>
+          <span key={idx} style={{ padding: '0 15px' }}>
+            {dayjs(m.date).format('MMM D')} {m.team1} vs {m.team2}
+          </span>
         ))}
-      </Grid>
+      </Ticker>
 
-      <h3 style={{ marginTop: '20px' }}>Past Results</h3>
-      <Grid>
-        {pastMatches.map((m, idx) => (
-          <Card key={idx} style={{ minWidth: '250px' }}>
-            <h4>
-              <img src={m.logo1} alt={m.team1} width="20" style={{ marginRight: '4px' }} />
-              {m.team1} {m.score1} - {m.score2} {m.team2}
-              <img src={m.logo2} alt={m.team2} width="20" style={{ marginLeft: '4px' }} />
-            </h4>
-            <p>
-              {formatDate(m.date)} {formatTime(m.date)}
-            </p>
-            <p>
-              {m.stadium}, {m.city}
-            </p>
-          </Card>
-        ))}
-      </Grid>
+      <Hero
+        title="FIFA Club World Cup | Live Scores & Highlights"
+        background="https://digitalhub.fifa.com/transform/87954546-0b34-4b94-a39f-dbc88fa7bdff"
+      />
+
+      <Section style={{ textAlign: 'center' }}>
+        <h2>{daysLeft} days until the FIFA World Cup Final</h2>
+      </Section>
+
+      {loading ? (
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '40px 0' }}>
+          <Spinner />
+        </div>
+      ) : (
+        <>
+          <Section>
+            <h3>🏟️ Club World Cup Headlines</h3>
+            <NewsGrid>
+              {fallbackNews.map((n, i) => (
+                <NewsCard key={i}>
+                  <img src={n.image} alt={n.title} />
+                  <div>
+                    <h4>{n.title}</h4>
+                    <p>{n.snippet}</p>
+                    <a href={n.link}>Read More</a>
+                  </div>
+                </NewsCard>
+              ))}
+            </NewsGrid>
+          </Section>
+
+          <Section>
+            <h3>Group Standings</h3>
+            <Grid>
+              {standings.map((g) => (
+                <Card as="details" key={g.group} style={{ minWidth: '250px' }}>
+                  <summary>{g.group}</summary>
+                  <StyledTable>
+                    <thead>
+                      <tr>
+                        <Th>Team</Th>
+                        <Th>Pts</Th>
+                        <Th>W</Th>
+                        <Th>L</Th>
+                        <Th>D</Th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {g.teams.map((t) => (
+                        <tr key={t.name}>
+                          <Td>
+                            <img src={t.logo} alt={t.name} width="20" style={{ marginRight: '4px' }} />
+                            {t.name}
+                          </Td>
+                          <Td>{t.points}</Td>
+                          <Td>{t.wins}</Td>
+                          <Td>{t.losses}</Td>
+                          <Td>{t.draws}</Td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </StyledTable>
+                </Card>
+              ))}
+            </Grid>
+          </Section>
+
+          <Section>
+            <h3>Upcoming Matches</h3>
+            <Grid>
+              {upcomingMatches.map((m, idx) => (
+                <Card key={idx} style={{ minWidth: '250px' }}>
+                  <h4>
+                    <img src={m.logo1} alt={m.team1} width="20" style={{ marginRight: '4px' }} />
+                    {m.team1} vs {m.team2}
+                    <img src={m.logo2} alt={m.team2} width="20" style={{ marginLeft: '4px' }} />
+                  </h4>
+                  <p>
+                    {formatDate(m.date)} {formatTime(m.date)}
+                  </p>
+                  <p>
+                    {m.stadium}, {m.city}
+                  </p>
+                </Card>
+              ))}
+            </Grid>
+          </Section>
+
+          <Section>
+            <h3>Past Results</h3>
+            <Grid>
+              {pastMatches.map((m, idx) => (
+                <Card key={idx} style={{ minWidth: '250px' }}>
+                  <h4>
+                    <img src={m.logo1} alt={m.team1} width="20" style={{ marginRight: '4px' }} />
+                    {m.team1} {m.score1} - {m.score2} {m.team2}
+                    <img src={m.logo2} alt={m.team2} width="20" style={{ marginLeft: '4px' }} />
+                  </h4>
+                  <p>
+                    {formatDate(m.date)} {formatTime(m.date)}
+                  </p>
+                  <p>
+                    {m.stadium}, {m.city}
+                  </p>
+                </Card>
+              ))}
+            </Grid>
+          </Section>
+        </>
+      )}
 
       {error && <p style={{ marginTop: '20px' }}>Live data could not be loaded.</p>}
     </Container>
