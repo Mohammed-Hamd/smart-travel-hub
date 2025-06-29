@@ -11,6 +11,7 @@ import Itinerary from './pages/Itinerary';
 import Essentials from './pages/Essentials';
 import Nightlife from './pages/Nightlife';
 import Monetization from './pages/Monetization';
+import WorldCup from './pages/WorldCup';
 import { Container } from './styles/components';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/essentials" element={<Essentials />} />
           <Route path="/nightlife" element={<Nightlife />} />
           <Route path="/monetization" element={<Monetization />} />
+          <Route path="/worldcup" element={<WorldCup />} />
         </Routes>
       </Container>
     </div>

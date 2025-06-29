@@ -17,6 +17,7 @@ function Navbar() {
       <NavItem to="/essentials">{t('nav.essentials')}</NavItem>
       <NavItem to="/nightlife">{t('nav.nightlife')}</NavItem>
       <NavItem to="/monetization">{t('nav.monetization')}</NavItem>
+      <NavItem to="/worldcup">{t('nav.worldcup')}</NavItem>
       <LanguageSelector />
     </NavbarWrapper>
   );
