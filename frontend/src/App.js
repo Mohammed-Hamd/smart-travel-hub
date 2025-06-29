@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
@@ -15,9 +15,15 @@ import WorldCup from './pages/WorldCup';
 import { Container } from './styles/components';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle('dark', darkMode);
+  }, [darkMode]);
+
   return (
     <div>
-      <Navbar />
+      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(!darkMode)} />
       <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -123,3 +123,62 @@ export const Select = styled.select`
   border-radius: 5px;
   border: 1px solid ${COLORS.secondary};
 `;
+
+export const Section = styled.section`
+  padding: 40px 0;
+`;
+
+export const Ticker = styled.div`
+  overflow-x: auto;
+  white-space: nowrap;
+  background: ${COLORS.primary};
+  color: #fff;
+  padding: 8px 0;
+  font-size: 0.9rem;
+`;
+
+export const NewsGrid = styled.div`
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+`;
+
+export const NewsCard = styled.div`
+  width: 260px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  div {
+    padding: 10px;
+  }
+`;
+
+export const Spinner = styled.div`
+  border: 4px solid ${COLORS.lightBg};
+  border-top: 4px solid ${COLORS.secondary};
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+export const ToggleButton = styled.button`
+  background: none;
+  border: 1px solid ${COLORS.secondary};
+  color: ${COLORS.text};
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+`;

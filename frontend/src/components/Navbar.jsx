@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavItem, NavbarWrapper } from '../styles/components';
+import { NavItem, NavbarWrapper, ToggleButton } from '../styles/components';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 
-function Navbar() {
+function Navbar({ darkMode, toggleDark }) {
   const { t } = useTranslation();
   return (
     <NavbarWrapper>
@@ -19,6 +19,7 @@ function Navbar() {
       <NavItem to="/monetization">{t('nav.monetization')}</NavItem>
       <NavItem to="/worldcup">{t('nav.worldcup')}</NavItem>
       <LanguageSelector />
+      <ToggleButton onClick={toggleDark}>{darkMode ? 'Light' : 'Dark'}</ToggleButton>
     </NavbarWrapper>
   );
 }
